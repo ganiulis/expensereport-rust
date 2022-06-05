@@ -46,6 +46,23 @@ fn main() {
 mod tests {
     #[test]
     fn characterize_print_report() {
+        use super::*;
 
+        let expenses = [
+            Expense {
+                type_: ExpenseType::Dinner,
+                amount: 1
+            },
+            Expense {
+                type_: ExpenseType::Breakfast,
+                amount: 4
+            },
+            Expense {
+                type_: ExpenseType::CarRental,
+                amount: 3
+            }
+        ];
+
+        print_report(&expenses);
     }
 }
