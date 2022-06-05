@@ -33,13 +33,13 @@ docker build -t rust-app .
 docker run -it --rm rust-app /bin/zsh
 ```
 
-5. Run tests
+4. Run tests
 
 ```zsh
 make all
 ```
 
-6. Exit and stop the container
+5. Exit and stop the container
 
 ```zsh
 bye
