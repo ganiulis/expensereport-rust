@@ -30,13 +30,13 @@ docker build -t rust-app .
 3. Start and enter the container
 
 ```sh
-docker run -it --rm rust-app /bin/zsh
+docker run -v "$(pwd)/app:/usr/app" -it --rm rust-app /bin/zsh
 ```
 
 4. Run tests
 
 ```zsh
-make all
+make test
 ```
 
 5. Exit and stop the container
