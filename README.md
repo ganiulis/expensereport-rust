@@ -1,5 +1,7 @@
 # Expense Report in Rust
 
+ZShell with some plugins is added to the image for ease of use and extra comfort.
+
 ## Requirements
 
 1. git
@@ -22,23 +24,23 @@ git clone https://github.com/ganiulis/expensereport-rust.git
 2. Build the image
 
 ```sh
-docker build -t rust-app-image .
+docker build -t rust-app .
 ```
 
-3. Start the container
+3. Start and enter the container
 
 ```sh
-docker run -d --rm --name rust-app rust-app-image
-```
-
-4. Enter the shell
-
-```sh
-docker exec -it rust-app zsh
+docker run -it --rm rust-app /bin/zsh
 ```
 
 5. Run tests
 
 ```zsh
 make all
+```
+
+6. Exit and stop the container
+
+```zsh
+bye
 ```
