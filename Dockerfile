@@ -1,8 +1,17 @@
 FROM rust:1.61
 
-WORKDIR /usr/app
-COPY ./app ./usr/app
+RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.2/zsh-in-docker.sh)" -- \
+ -t cloud \
+ -p aliases \
+    colorize \
+    common-aliases \
+    rust \
+    zsh-autosuggestions \
+    zsh-syntax-highlighting
 
-RUN cargo install --path ./usr/app
+WORKDIR /usr/app
+COPY ./app .
+
+RUN cargo install --path .
 
 CMD tail -f /dev/null
